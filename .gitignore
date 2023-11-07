@@ -1,0 +1,7 @@
+data
+vendor
+node_modules
+.gomon
+.vscode
+*.log
+static/dist/*

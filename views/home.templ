@@ -1,0 +1,68 @@
+package views
+
+import (
+	"gohtmx/internal/model"
+)
+
+templ BasePage(title string, showNavbar bool, user *model.User) {
+	<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta name="viewport" content="width=device-width, initial-scale=1"/>
+			<title>{ title }</title>
+			<script type="module" src="/assets/dist/index.js"></script>
+			<link rel="stylesheet" href="/assets/dist/index.css"/>
+		</head>
+		<body class="h-full w-full flex flex-col justify-stretch items-stretch">
+			if showNavbar {
+				@Navbar(user)
+			}
+			<div class="grow">
+				{ children... }
+			</div>
+		</body>
+	</html>
+}
+
+templ HomePage(title string, user *model.User) {
+	@BasePage(title, true, user) {
+		<!DOCTYPE html>
+		<header class="hero w-full bg-base-300 p-2 md:p-16">
+			<section class="hero-content flex-col lg:flex-row">
+				<div>
+					<h1 class="text-5xl font-bold">
+						Headline
+					</h1>
+					<p class="py-6">
+						Lede
+					</p>
+				</div>
+				<div class="card shrink-0 bg-base-100 lg:basis-[480px]">
+					<div class="flex flex-col items-center gap-2 p-4 lg:p-8 text-xs md:text-sm">
+						<h4>
+							Call to action
+						</h4>
+						<a class="btn-primary btn w-full" href="/action1">
+							Action 1 →
+						</a>
+						<div class="w-full text-center font-bold">— or —</div>
+						<a class="btn-primary btn w-full" href="/action2">
+							Action 2 →
+						</a>
+					</div>
+				</div>
+			</section>
+		</header>
+		<main class="mx-auto flex flex-col items-center md:my-4 md:max-w-screen-md lg:max-w-screen-lg">
+			<section class="flex flex-col gap-2 mb-4">
+				<p class="font-bold">
+					Intro
+				</p>
+			</section>
+			<section class="mb-4 flex w-full flex-col gap-4">
+				Body content
+			</section>
+		</main>
+	}
+}
+

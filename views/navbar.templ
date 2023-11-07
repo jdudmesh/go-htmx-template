@@ -1,0 +1,30 @@
+package views
+
+import (
+	"gohtmx/internal/model"
+)
+
+templ Navbar(user *model.User) {
+	<nav class="navbar z-50 h-16 grow-0 flex flex-col justify-between bg-neutral text-neutral-content lg:flex-row">
+		<div class="">
+			<a href="/">
+				<img src="/assets/images/logo.png" alt="Logo" class="max-h-12" />
+			</a>
+		</div>
+		<div hx-get="/components/auth-buttons" hx-trigger="load"></div>
+	</nav>
+}
+
+templ AuthButtons(user *model.User) {
+	<div class="flex flex-row gap-4 items-center">
+		if user != nil {
+			<a hx-post="/api/logout">Logout</a>
+		} else {
+			<a href="/signup">Signup</a>
+			<a href="/login">Login</a>
+		}
+	</div>
+}
+
+//xxx
+

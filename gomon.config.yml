@@ -1,0 +1,30 @@
+entrypoint: ./cmd/server/main.go
+
+excludePaths: ["vendor", "client"]
+
+hardReload:
+  - "*.go"
+  - "go.mod"
+  - "*.templ"
+
+softReload:
+  - "*.html"
+  - "*.css"
+  - "*.js"
+
+prestart:
+  - "templ generate"
+
+envFiles:
+  - ".env.local"
+
+reloadOnUnhandled: false
+
+proxy:
+  enabled: true
+  port: 4000
+  downstream:
+    host: localhost:8080
+    timeout: 5
+ui:
+  enabled: true

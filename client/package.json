@@ -1,0 +1,35 @@
+{
+  "name": "emdr",
+  "version": "0.1",
+  "description": "client side for self-emdr",
+  "license": "Proprietary",
+  "scripts": {
+    "dev": "vite",
+    "build:watch": "vite build --watch",
+    "build": "vite build",
+    "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --ext .ts --fix",
+    "prettier": "prettier --write src/"
+  },
+  "author": "John Dudmesh",
+  "dependencies": {
+    "alpinejs": "^3.13.2",
+    "htmx.org": "^1.9.6",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/alpinejs": "^3.13.3",
+    "@typescript-eslint/eslint-plugin": "^6.9.0",
+    "@typescript-eslint/parser": "^6.9.0",
+    "daisyui": "^3.9.4",
+    "eslint": "^8.52.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "postcss": "^8.4.31",
+    "postcss-preset-env": "^9.2.0",
+    "prettier": "^3.0.3",
+    "tailwindcss": "^3.3.5",
+    "typescript": "^5.2.2",
+    "vite": "^4.5.0"
+  }
+}

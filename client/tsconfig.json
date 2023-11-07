@@ -1,0 +1,23 @@
+{
+	"compilerOptions": {
+		"rootDir": "src",
+		"outDir": "dist",
+		"strict": true,
+		"lib": [
+			"ES6",
+			"DOM"
+		],
+		"moduleResolution": "node",
+		"module": "ES2015",
+		"target": "ES6",
+		"sourceMap": true,
+		"esModuleInterop": true,
+		"allowJs": true,
+		"checkJs": false,
+		"experimentalDecorators": true,
+		"resolveJsonModule": true,
+	},
+	"include": [
+		"src/**/*.ts",
+	]
+}
