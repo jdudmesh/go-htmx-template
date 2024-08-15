@@ -12,3 +12,5 @@ declare global {
 
 window.Alpine = Alpine;
 window.htmx = htmx;
+
+Alpine.start();
